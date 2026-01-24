@@ -33,16 +33,20 @@ public class Main {
             System.out.println(phoneNo.get(i));
         }
 
-        for (String name : names) {
+        //Ask the user to enter a name to search
 
+        System.out.println("Now you must enter a name to search on the ArrayList");
+        String searchName = scanner.nextLine();
+
+        // If the name exists:
+        // Print the phone number
+        if(names.contains(searchName)){
+            System.out.println(searchName+"'s phone number is: "+phoneNo.get(names.indexOf(searchName)));
         }
 
 
 
-        //Ask the user to enter a name to search
 
-//        If the name exists:
-//        Print the phone number
 
 
 //        If it does not exist:
