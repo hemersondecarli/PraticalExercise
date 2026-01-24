@@ -34,7 +34,6 @@ public class Main {
         }
 
         //Ask the user to enter a name to search
-
         System.out.println("Now you must enter a name to search on the ArrayList");
         String searchName = scanner.nextLine();
 
@@ -42,16 +41,14 @@ public class Main {
         // Print the phone number
         if(names.contains(searchName)){
             System.out.println(searchName+"'s phone number is: "+phoneNo.get(names.indexOf(searchName)));
-        }else {
+        }
+        // If it does not exist:
+        // Print "Contact not found"
+        else {
             System.out.println("Contact not found!");
         }
 
 
-
-
-
-//        If it does not exist:
-//        Print "Contact not found"
 
 
         //Extra challenges
