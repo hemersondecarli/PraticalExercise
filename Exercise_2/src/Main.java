@@ -28,6 +28,16 @@ public class Main {
         //Print all contacts in this format:
 //        1. Alice - 0851234567
 //        2. Bob - 0879876543
+        for  (int i = 0; i < names.size(); i++) {
+            System.out.printf(names.get(i)+" - ");
+            System.out.println(phoneNo.get(i));
+        }
+
+        for (String name : names) {
+
+        }
+
+
 
         //Ask the user to enter a name to search
 
