@@ -42,8 +42,9 @@ public class Main {
         // Print the phone number
         if(names.contains(searchName)){
             System.out.println(searchName+"'s phone number is: "+phoneNo.get(names.indexOf(searchName)));
+        }else {
+            System.out.println("Contact not found!");
         }
-
 
 
 
