@@ -79,16 +79,5 @@ public class Main {
         }
 
         scanner.close();
-
-
-        //Extra challenges
-        //
-        //Prevent duplicate names
-        //
-        //Allow the user to update a phone number
-        //
-        //Ask if they want to search again (loop)
-        //
-        //Format phone numbers consistently
     }
 }
