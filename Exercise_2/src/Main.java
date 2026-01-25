@@ -35,16 +35,22 @@ public class Main {
 
         //Ask the user to enter a name to search
         System.out.println("Now you must enter a name to search on the ArrayList");
-        String searchName = scanner.nextLine();
+        String searchName;
+        searchName = scanner.nextLine();
+        boolean isFound = false;
 
         // If the name exists:
         // Print the phone number
-        if(names.contains(searchName)){
-            System.out.println(searchName+"'s phone number is: "+phoneNo.get(names.indexOf(searchName)));
+        for (int i = 0; i < names.size(); i++) {
+            if(names.get(i).equals(searchName)) {
+                System.out.println(searchName + "'s phone number is: " + phoneNo.get(names.indexOf(searchName)));
+                isFound = true;
+            }
         }
+
         // If it does not exist:
         // Print "Contact not found"
-        else {
+        if(!isFound) {
             System.out.println("Contact not found!");
         }
 
