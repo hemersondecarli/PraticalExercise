@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Storing
-        ArrayList <String> names = new ArrayList<>();
-        ArrayList <String> phoneNo = new ArrayList<>();
+        ArrayList<String> names = new ArrayList<>();
+        ArrayList<String> phoneNo = new ArrayList<>();
 
 
         //Asks the user how many contacts they want to store (max 5)
@@ -17,42 +17,42 @@ public class Main {
         choice = scanner.nextInt();
         scanner.nextLine();
 
-    if (choice <= 5) {
-        for (int i = 0; names.size() < choice; i++) {
-            System.out.printf("Enter contact no. %d: ", i + 1);
-            String nameToAdd = scanner.nextLine();
+        if (choice <= 5) {
+            for (int i = 0; names.size() < choice; i++) {
+                System.out.printf("Enter contact no. %d: ", i + 1);
+                String nameToAdd = scanner.nextLine();
 
-            //Checks for name duplicate
-            for (String name : names){
-                if(name.equalsIgnoreCase(nameToAdd)){
-                    nameDuplicate = true;
-                    break;
+                //Checks for name duplicate
+                for (String name : names) {
+                    if (name.equalsIgnoreCase(nameToAdd)) {
+                        nameDuplicate = true;
+                        break;
+                    }
+
                 }
-
+                //if name duplicate is found
+                if (nameDuplicate) {
+                    System.out.println("Contact already exists");
+                    i--;
+                    nameDuplicate = false;
+                }
+                //if not found do this
+                else {
+                    names.add(nameToAdd);
+                    System.out.println("Enter phone no.");
+                    phoneNo.add(scanner.nextLine());
+                }
             }
-            //if name duplicate is found
-            if(nameDuplicate){
-                System.out.println("Contact already exists");
-                i--;
-                nameDuplicate = false;
-            }
-            //if not found do this
-            else {
-                names.add(nameToAdd);
-                System.out.println("Enter phone no.");
-                phoneNo.add(scanner.nextLine());
-            }
+        } else {
+            System.out.println("You can only store up to 5 contacts");
+            return;
         }
-    }else {
-        System.out.println("You can only store up to 5 contacts");
-        return;
-    }
 
         //Print all contacts in this format:
 //        1. Alice - 0851234567
 //        2. Bob - 0879876543
-        for  (int i = 0; i < names.size(); i++) {
-            System.out.printf(names.get(i)+" - ");
+        for (int i = 0; i < names.size(); i++) {
+            System.out.printf(names.get(i) + " - ");
             System.out.println(phoneNo.get(i));
         }
 
@@ -66,7 +66,7 @@ public class Main {
         // Print the phone number
         //Make the search case-insensitive
         for (int i = 0; i < names.size(); i++) {
-            if(names.get(i).equalsIgnoreCase(searchName)) {
+            if (names.get(i).equalsIgnoreCase(searchName)) {
                 System.out.println(names.get(i) + "'s phone number is: " + phoneNo.get(i));
                 isFound = true;
             }
@@ -74,11 +74,11 @@ public class Main {
 
         // If it does not exist:
         // Print "Contact not found"
-        if(!isFound) {
+        if (!isFound) {
             System.out.println("Contact not found!");
         }
 
-
+        scanner.close();
 
 
         //Extra challenges
