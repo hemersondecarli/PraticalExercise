@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         //Storing
-        ArrayList <String> names = new ArrayList();
-        ArrayList <String> phoneNo = new ArrayList();
+        ArrayList <String> names = new ArrayList<>();
+        ArrayList <String> phoneNo = new ArrayList<>();
 
 
         //Asks the user how many contacts they want to store (max 5)
