@@ -41,9 +41,10 @@ public class Main {
 
         // If the name exists:
         // Print the phone number
+        //Make the search case-insensitive
         for (int i = 0; i < names.size(); i++) {
-            if(names.get(i).equals(searchName)) {
-                System.out.println(searchName + "'s phone number is: " + phoneNo.get(names.indexOf(searchName)));
+            if(names.get(i).equalsIgnoreCase(searchName)) {
+                System.out.println(names.get(i) + "'s phone number is: " + phoneNo.get(i));
                 isFound = true;
             }
         }
@@ -58,7 +59,6 @@ public class Main {
 
 
         //Extra challenges
-        //Make the search case-insensitive
         //
         //Prevent duplicate names
         //
