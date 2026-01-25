@@ -11,18 +11,40 @@ public class Main {
 
         //Asks the user how many contacts they want to store (max 5)
         int choice;
+        boolean nameDuplicate = false;
+
         System.out.print("How many contacts do you want to store?: ");
         choice = scanner.nextInt();
         scanner.nextLine();
+
     if (choice <= 5) {
-        for (int i = 0; i < choice; i++) {
+        for (int i = 0; names.size() < choice; i++) {
             System.out.printf("Enter contact no. %d: ", i + 1);
-            names.add(scanner.nextLine());
-            System.out.println("Enter phone no.");
-            phoneNo.add(scanner.nextLine());
+            String nameToAdd = scanner.nextLine();
+
+            //Checks for name duplicate
+            for (String name : names){
+                if(name.equalsIgnoreCase(nameToAdd)){
+                    nameDuplicate = true;
+                    break;
+                }
+
+            }
+            //if name duplicate is found
+            if(nameDuplicate){
+                System.out.println("Contact already exists");
+                nameDuplicate = false;
+            }
+            //if not found do this
+            else {
+                names.add(nameToAdd);
+                System.out.println("Enter phone no.");
+                phoneNo.add(scanner.nextLine());
+            }
         }
-    }else{
+    }else {
         System.out.println("You can only store up to 5 contacts");
+        return;
     }
 
         //Print all contacts in this format:
