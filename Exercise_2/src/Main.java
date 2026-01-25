@@ -33,6 +33,7 @@ public class Main {
             //if name duplicate is found
             if(nameDuplicate){
                 System.out.println("Contact already exists");
+                i--;
                 nameDuplicate = false;
             }
             //if not found do this
