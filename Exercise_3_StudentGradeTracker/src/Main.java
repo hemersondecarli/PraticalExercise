@@ -86,5 +86,12 @@ public class Main {
                     System.out.println("The student name does not exist");
                 }
             scanner.close();
+
+                //Next steps
+        //don't allow duplicate names
+        //Count how many students passed (score ≥ 40)
+        //Allow updating a student’s score
+        //Ask if the user wants to search again
+
         }
     }
