@@ -13,7 +13,7 @@ public class Main {
         int maxNumberOfStudents = 5;
         int examScore;
         String name;
-
+        boolean duplicateName = false;
 
 
         System.out.println("Enter how many students you would like to add: ");
@@ -33,10 +33,21 @@ public class Main {
                      scanner.nextLine();
                  } while (examScore < 0 || examScore > 100);
 
-                 //stored in arrayList
-                    names.add(name);
-                    grades.add(examScore);
-
+                 for (String nameDuplicate : names){
+                     if(nameDuplicate.equals(name)){
+                         duplicateName = true;
+                         break;
+                     }
+                 }
+                 if(duplicateName){
+                     System.out.println("Name already exists");
+                     i--;
+                     duplicateName = false;
+                 }else{
+                     //stored in arrayList
+                     names.add(name);
+                     grades.add(examScore);
+                 }
             }
         }
         System.out.println(names);
