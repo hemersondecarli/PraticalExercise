@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -59,8 +60,11 @@ public class Main {
             highestScore = grade.longValue() > highestScore ? grade : highestScore;
         }
         int average = sum/grades.size();
+
+        //Using Collections is the best approach on this case, much more simple and clean
         System.out.println("The average grade is "+average);
         System.out.println("The maximum grade is "+highestScore);
-
+        System.out.println("The maximum grade is (COLLECTIONS) "+Collections.max(grades));
+        System.out.println("The lowest grade is "+ Collections.min(grades));
     }
 }
