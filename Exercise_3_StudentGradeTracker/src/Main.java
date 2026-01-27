@@ -52,8 +52,15 @@ public class Main {
         for (Integer grade : grades){
             sum += grade;
         }
+        //Highest grade
+        int highestScore = 0;
+        for (Integer grade : grades){
+            //Ternary expression
+            highestScore = grade.longValue() > highestScore ? grade : highestScore;
+        }
         int average = sum/grades.size();
         System.out.println("The average grade is "+average);
+        System.out.println("The maximum grade is "+highestScore);
 
     }
 }
