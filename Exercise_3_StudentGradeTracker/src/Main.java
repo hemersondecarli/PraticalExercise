@@ -66,5 +66,25 @@ public class Main {
         System.out.println("The maximum grade is "+highestScore);
         System.out.println("The maximum grade is (COLLECTIONS) "+Collections.max(grades));
         System.out.println("The lowest grade is "+ Collections.min(grades));
+
+
+//        Ask the user to enter a student name to search:
+//        If the name exists (case-insensitive), print that student’s score
+//        If it does not exist, print “Student not found”
+
+        System.out.println("Enter a student name to search");
+        String nameSearch = scanner.nextLine();
+        boolean isFound = false;
+
+            for (int i = 0; i < names.size(); i++) {
+                if (names.get(i).equalsIgnoreCase(nameSearch)) {
+                    System.out.println(names.get(i) + " grande is: " + grades.get(i));
+                    isFound = true;
+                }
+            }
+                if(!isFound){
+                    System.out.println("The student name does not exist");
+                }
+            scanner.close();
+        }
     }
-}
