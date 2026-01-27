@@ -77,6 +77,12 @@ public class Main {
         System.out.println("The maximum grade is "+highestScore);
         System.out.println("The maximum grade is (COLLECTIONS) "+Collections.max(grades));
         System.out.println("The lowest grade is "+ Collections.min(grades));
+        //Displaying grades above 40%
+       for (Integer grade : grades){
+           if (grade >= 40){
+               System.out.println(grade);
+           }
+       }
 
 
 //        Ask the user to enter a student name to search:
@@ -99,7 +105,6 @@ public class Main {
             scanner.close();
 
                 //Next steps
-        //don't allow duplicate names
         //Count how many students passed (score ≥ 40)
         //Allow updating a student’s score
         //Ask if the user wants to search again
