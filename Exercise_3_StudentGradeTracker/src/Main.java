@@ -93,25 +93,23 @@ public class Main {
 //        If the name exists (case-insensitive), print that student’s score
 //        If it does not exist, print “Student not found”
 
-        System.out.println("Enter a student name to search");
-        String nameSearch = scanner.nextLine();
-        boolean isFound = false;
+        String nameSearch;
+       do{
+           System.out.println("Enter a student name to search");
+            nameSearch = scanner.nextLine();
+           boolean isFound = false;
 
-            for (int i = 0; i < names.size(); i++) {
-                if (names.get(i).equalsIgnoreCase(nameSearch)) {
-                    System.out.println(names.get(i) + " grande is: " + grades.get(i));
-                    isFound = true;
-                }
-            }
-                if(!isFound){
-                    System.out.println("The student name does not exist");
-                }
+           for (int i = 0; i < names.size(); i++) {
+               if (names.get(i).equalsIgnoreCase(nameSearch)) {
+                   System.out.println(names.get(i) + " grande is: " + grades.get(i));
+                   isFound = true;
+               }
+           }
+           if (!isFound) {
+               System.out.println("The student name does not exist");
+           }
+       }while(!nameSearch.isEmpty());
             scanner.close();
-
-                //Next steps
-        //Count how many students passed (score ≥ 40)
-        //Allow updating a student’s score
-        //Ask if the user wants to search again
 
         }
     }
