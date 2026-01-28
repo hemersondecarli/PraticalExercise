@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -9,18 +10,29 @@ public class Main {
         ArrayList<String> names = new ArrayList<>();
         ArrayList<Integer> grades = new ArrayList<>();
 
-        int numberOfStudents;
+        int numberOfStudents = 0;
         int maxNumberOfStudents = 5;
         int examScore;
         String name;
         boolean duplicateName = false;
 
+       try {
+           do {
+               System.out.println("Enter how many students you would like to add: ");
+               numberOfStudents = scanner.nextInt();
+               scanner.nextLine();
 
-        System.out.println("Enter how many students you would like to add: ");
-        numberOfStudents = scanner.nextInt();
-        scanner.nextLine();
+               if (numberOfStudents <= 0) {
+                   System.out.println("You can't enter a negative number");
+                   return;
+               }
 
-        if(numberOfStudents <= maxNumberOfStudents){
+           } while (numberOfStudents > maxNumberOfStudents);
+       } catch (InputMismatchException e) {
+           System.out.println("Only numbers can be entered.");
+           return;
+       }
+
             for (int i = 0; i < numberOfStudents; i++) {
                 System.out.println("Enter Name: ");
                 name= scanner.nextLine();
@@ -49,7 +61,7 @@ public class Main {
                      grades.add(examScore);
                  }
             }
-        }
+
         System.out.println(names);
         System.out.println(grades);
 
