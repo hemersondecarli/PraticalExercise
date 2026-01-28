@@ -77,13 +77,17 @@ public class Main {
         System.out.println("The maximum grade is "+highestScore);
         System.out.println("The maximum grade is (COLLECTIONS) "+Collections.max(grades));
         System.out.println("The lowest grade is "+ Collections.min(grades));
-        //Displaying grades above 40%
-       for (Integer grade : grades){
-           if (grade >= 40){
-               System.out.println(grade);
-           }
-       }
 
+        int countStudent=0;
+
+        //Displaying grades above 40%
+       for (int i = 0; i < grades.size(); i++){
+        if (grades.get(i) >= 40){
+            System.out.println(names.get(i) + " grade is: "+ grades.get(i));
+            countStudent++;
+        }
+       }
+        System.out.println(countStudent+" Students had their grades above 40%");
 
 //        Ask the user to enter a student name to search:
 //        If the name exists (case-insensitive), print that student’s score
