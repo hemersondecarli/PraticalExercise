@@ -7,68 +7,42 @@ public class Main {
     static Random random = new Random();
 
     public static void main(String[] args) {
-
-        //System.out.println("This is a " + type.getDescription());
-
-//        for (Type types : Type.values()) {
-//            System.out.println(types);
-//        }
-
-        conditions();
-
+        game();
     }
 
-    public static void conditions() {
-        Type scissors = Type.SCISSORS;
-        String choice;
+    public static void game() {
+        String userInput;
 
-        //scissors.computerChoice();
+
+        //checks what the computer chose
+        Type computerChoice = Type.computerChoice();
+        System.out.println("Computer chose: " + computerChoice);
 
         System.out.println("Choose between, [rock] - [paper] - [scissors]");
-        choice = scanner.nextLine();
+        userInput = scanner.nextLine();
 
-        switch (choice) {
-            case "rock": rock(); break;
-            case "paper": paper(); break;
-            case "scissors": scissors(); break;
+        //this will be compared against Enum values
+        Type userChoice;
+        
+        switch (userInput) {
+            case "rock": userChoice = Type.ROCK; break;
+            case "paper": userChoice = Type.PAPER; break;
+            case "scissors": userChoice = Type.SCISSORS; break;
             default: System.out.println("Invalid choice");
+            return;
         }
-    }
 
-    public static void scissors(){
-        Type scissors = Type.SCISSORS;
-        //comparing enum with a string
-        //Scissors
-        if("scissors".equalsIgnoreCase(scissors.computerChoice())) {
-            System.out.println("It's a Draw");
-        }else if ("scissors".equalsIgnoreCase(scissors.computerChoice())) {
-            System.out.println("You Lost!");
-        }else if ("scissors".equalsIgnoreCase(scissors.computerChoice())) {
-            System.out.println("You Won!");
+        //Conditions
+        if(userChoice == computerChoice){
+            System.out.println("Its a draw!");
+        }else if   (userChoice == Type.ROCK && computerChoice == Type.SCISSORS ||
+                    userChoice == Type.PAPER && computerChoice == Type.ROCK ||
+                    userChoice == Type.SCISSORS && computerChoice == Type.PAPER) {
+            System.out.println("You win!");
         }
-    }
-
-    public static void rock(){
-        Type rock = Type.ROCK;
-
-        if("rock".equalsIgnoreCase(rock.computerChoice())) {
-            System.out.println("You Won!");
-        }else if ("rock".equalsIgnoreCase(rock.computerChoice())) {
-            System.out.println("It's a Draw");
-        }else if ("rock".equalsIgnoreCase(rock.computerChoice())) {
-            System.out.println("You Lost!");
-        }
-    }
-
-    public static void paper(){
-        Type paper = Type.PAPER;
-
-        if("paper".equalsIgnoreCase(paper.computerChoice())) {
-            System.out.println("You Lost!");
-        }else if ("paper".equalsIgnoreCase(paper.computerChoice())) {
-            System.out.println("You Won!");
-        }else if ("paper".equalsIgnoreCase(paper.computerChoice())) {
-            System.out.println("It's a Draw");
-        }
+        else if(userChoice == Type.ROCK &&  computerChoice == Type.PAPER ||
+                userChoice == Type.SCISSORS &&  computerChoice == Type.ROCK ||
+                userChoice == Type.PAPER &&  computerChoice == Type.SCISSORS) {
+            System.out.println("You Lost!");}
     }
 }
