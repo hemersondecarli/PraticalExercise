@@ -19,7 +19,7 @@ public class Main {
         System.out.println("Computer chose: " + computerChoice);
 
         System.out.println("Choose between, [rock] - [paper] - [scissors]");
-        userInput = scanner.nextLine();
+        userInput = scanner.nextLine().toLowerCase();
 
         //this will be compared against Enum values
         Type userChoice;
