@@ -1,24 +1,23 @@
 import java.util.Random;
+
 public enum Type {
+
 
     ROCK("Rock"),
     PAPER("Paper"),
-    SCISSORS("Scissors"),;
+    SCISSORS("Scissors");
 
-    private String description;
+    public String description;
 
     private Type(String description) {
         this.description = description;
     }
 
-    String computerChoice(){
-    Type randomChoice = Type.values()[
-            new Random().nextInt(Type.values().length)
-            ];
+    public static Random random = new Random();
+    private static final Type[] VALUES = values();
 
-         System.out.println(randomChoice.getDescription());
-
-        return randomChoice.getDescription();
+    public static Type computerChoice(){
+        return VALUES[random.nextInt(VALUES.length)];
     }
 
 
