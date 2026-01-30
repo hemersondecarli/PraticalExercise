@@ -1,10 +1,6 @@
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
-
 public class Main {
     static Scanner scanner = new Scanner(System.in);
-    static Random random = new Random();
 
     public static void main(String[] args) {
         game();
@@ -13,8 +9,7 @@ public class Main {
     public static void game() {
         String userInput;
 
-
-        //checks what the computer chose
+        //checks what the computer chose (for testing purposes)
         Type computerChoice = Type.computerChoice();
         System.out.println("Computer chose: " + computerChoice);
 
